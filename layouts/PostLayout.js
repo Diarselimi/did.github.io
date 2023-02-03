@@ -95,6 +95,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 <div className="flex space-x-3 pt-6">
                   <SocialIcon href={discussUrl(slug)} kind={'twitter'} rel="nofollow" />
                   <SocialIcon href={shareOnLinkedinUrl(slug)} kind={'linkedin'} rel="nofollow" />
+                  <SocialIcon href={shareOnLinkedinUrl(slug)} kind={'linkedin'} rel="nofollow" />
                 </div>
               </div>
             </div>
