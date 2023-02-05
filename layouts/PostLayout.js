@@ -21,7 +21,7 @@ const shareOnLinkedinUrl = (slug) =>
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
-  const { slug, fileName, date, title, images, tags } = frontMatter
+  const { slug, fileName, date, title, images, tags, path, path_tag } = frontMatter
 
   return (
     <SectionContainer>
@@ -106,9 +106,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       Tags
                     </h2>
                     <div className="flex flex-wrap">
-                      {tags.map((tag) => (
-                        <Tag key={tag} text={tag} />
-                      ))}
+                      {tags.map((tag) => tag !== path_tag && <Tag key={tag} text={tag} />)}
                     </div>
                   </div>
                 )}
