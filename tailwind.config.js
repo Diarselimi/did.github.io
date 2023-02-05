@@ -170,11 +170,6 @@ module.exports = {
       }),
     },
   },
-  variants: {
-    extend: {
-      backgroundImage: ['dark'],
-    },
-  },
 
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 }
