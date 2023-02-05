@@ -50,7 +50,7 @@ export default function Home({ posts }) {
                           {path && (
                             <Link
                               href={`/tags/${path_tag}`}
-                              className="border-1 rounded-md border-primary-200 bg-primary-500 p-1 text-xs text-white"
+                              className="border-1 rounded border-primary-200 bg-primary-500 p-1 text-xs text-white"
                             >
                               Path: {path}
                             </Link>
