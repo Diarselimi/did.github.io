@@ -13,11 +13,6 @@ module.exports = {
     './data/**/*.mdx',
   ],
   darkMode: 'media',
-  variants: {
-    extend: {
-      backgroundImage: ['dark'],
-    },
-  },
   theme: {
     extend: {
       backgroundImage: (theme) => ({
