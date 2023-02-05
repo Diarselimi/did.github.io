@@ -8,14 +8,14 @@
 
 .dark-hero {
   background-image: url('../public/static/images/hero_dark.jpg');
-  background-position: ;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .light-beams {
   background-image: url('../public/static/images/light-beams.png');
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
