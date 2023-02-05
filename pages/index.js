@@ -45,6 +45,18 @@ export default function Home({ posts }) {
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                         <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
+                      <dd>
+                        <div className="flex flex-wrap">
+                          {path && (
+                            <Link
+                              href={`/blog/${path_tag}`}
+                              className="border-1 rounded-md border-primary-200 bg-primary-500 p-1 text-xs text-white"
+                            >
+                              {path}
+                            </Link>
+                          )}
+                        </div>
+                      </dd>
                     </dl>
                     <div className="space-y-5 xl:col-span-3">
                       <div className="space-y-6">
@@ -57,16 +69,6 @@ export default function Home({ posts }) {
                               {title}
                             </Link>
                           </h2>
-                          <div className="flex flex-wrap">
-                            {path && (
-                              <Link
-                                href={`/blog/${path_tag}`}
-                                className="border-1 rounded-md border-blue-200 bg-blue-500 p-5 text-xs"
-                              >
-                                {path}
-                              </Link>
-                            )}
-                          </div>
                           <div className="flex flex-wrap">
                             {tags.map((tag) => tag !== path_tag && <Tag key={tag} text={tag} />)}
                           </div>
