@@ -16,8 +16,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: (theme) => ({
-        'dark-hero': "url('/static/images/hero_dark.jpg')",
-        'light-beams': "url('/static/images/light-beams.png')",
+        'dark-hero':
+          "url('https://diarselimi-github-io-ix9b-git-bundle-php-api-diarselimi.vercel.app/static/images/hero_dark.jpg')",
+        'light-beams':
+          "url('https://diarselimi-github-io-ix9b-git-bundle-php-api-diarselimi.vercel.app/static/images/light-beams.png')",
       }),
       spacing: {
         '9/16': '56.25%',
