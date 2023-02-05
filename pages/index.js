@@ -52,7 +52,7 @@ export default function Home({ posts }) {
                               href={`/blog/${path_tag}`}
                               className="border-1 rounded-md border-primary-200 bg-primary-500 p-1 text-xs text-white"
                             >
-                              {path}
+                              Path: {path}
                             </Link>
                           )}
                         </div>
