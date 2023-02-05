@@ -15,10 +15,10 @@ module.exports = {
   darkMode: 'media',
   theme: {
     extend: {
-      backgroundImage: {
+      backgroundImage: (theme) => ({
         'dark-hero': "url('/static/images/hero_dark.jpg')",
         'light-beams': "url('/static/images/light-beams.png')",
-      },
+      }),
       spacing: {
         '9/16': '56.25%',
       },
