@@ -12,7 +12,7 @@ module.exports = {
     './lib/**/*.js',
     './data/**/*.mdx',
   ],
-  darkMode: 'class',
+  darkMode: 'media',
   theme: {
     extend: {
       backgroundImage: {
@@ -168,5 +168,11 @@ module.exports = {
       }),
     },
   },
+  variants: {
+    extend: {
+      backgroundImage: ['dark'],
+    },
+  },
+
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 }
