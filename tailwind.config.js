@@ -15,12 +15,12 @@ module.exports = {
   darkMode: 'media',
   theme: {
     extend: {
-      backgroundImage: (theme) => ({
+      backgroundImage: {
         'dark-hero':
           "url('https://diarselimi-github-io-ix9b-git-bundle-php-api-diarselimi.vercel.app/static/images/hero_dark.jpg')",
         'light-beams':
           "url('https://diarselimi-github-io-ix9b-git-bundle-php-api-diarselimi.vercel.app/static/images/light-beams.png')",
-      }),
+      },
       spacing: {
         '9/16': '56.25%',
       },
