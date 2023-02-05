@@ -49,7 +49,7 @@ export default function Home({ posts }) {
                         <div className="flex flex-wrap">
                           {path && (
                             <Link
-                              href={`/tag/${path_tag}`}
+                              href={`/tags/${path_tag}`}
                               className="border-1 rounded-md border-primary-200 bg-primary-500 p-1 text-xs text-white"
                             >
                               Path: {path}
