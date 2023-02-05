@@ -12,9 +12,18 @@ module.exports = {
     './lib/**/*.js',
     './data/**/*.mdx',
   ],
-  darkMode: 'class',
+  darkMode: 'media',
+  variants: {
+    extend: {
+      backgroundImage: ['dark'],
+    },
+  },
   theme: {
     extend: {
+      backgroundImage: (theme) => ({
+        dkimg: "url('../public/static/images/hero_dark.jpg')",
+        ltimg: "url('../public/static/images/light-beams.png')",
+      }),
       spacing: {
         '9/16': '56.25%',
       },

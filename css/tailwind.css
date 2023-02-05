@@ -6,20 +6,6 @@
   @apply hidden;
 }
 
-.dark-hero {
-  background-image: url('../public/static/images/hero_dark.jpg');
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.light-beams {
-  background-image: url('../public/static/images/light-beams.png');
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .task-list-item {
   @apply list-none;
 }
