@@ -35,7 +35,7 @@ export default function Home({ posts }) {
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-            const { slug, date, title, summary, tags, path, tag } = frontMatter
+            const { slug, date, title, summary, tags, path, path_tag } = frontMatter
             return (
               <li key={slug} className="py-12">
                 <article>
@@ -55,20 +55,20 @@ export default function Home({ posts }) {
                               className="text-gray-900 dark:text-gray-100"
                             >
                               {title}
-                              {path && (
-                                <Link
-                                  href={`/blog/${tag}`}
-                                  className="border-1 rounded-md border-b-emerald-500 border-b-emerald-800 p-5"
-                                >
-                                  {path}
-                                </Link>
-                              )}
                             </Link>
                           </h2>
                           <div className="flex flex-wrap">
-                            {tags.map((tag) => (
-                              <Tag key={tag} text={tag} />
-                            ))}
+                            {path && (
+                              <Link
+                                href={`/blog/${path_tag}`}
+                                className="border-1 rounded-md border-b-emerald-800 bg-emerald-500 p-5"
+                              >
+                                {path}
+                              </Link>
+                            )}
+                          </div>
+                          <div className="flex flex-wrap">
+                            {tags.map((tag) => tag !== path_tag && <Tag key={tag} text={tag} />)}
                           </div>
                         </div>
                         <div className="prose max-w-none text-gray-500 dark:text-gray-400">
