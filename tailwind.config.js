@@ -12,7 +12,7 @@ module.exports = {
     './lib/**/*.js',
     './data/**/*.mdx',
   ],
-  darkMode: 'media',
+  darkMode: 'class',
   theme: {
     extend: {
       backgroundImage: (theme) => ({
