@@ -10,7 +10,8 @@ github: https://github.com/didslm
 
 # Hi friend! 👋
 
-I am Diar, I'm thrilled that you are here and I would love if we could get in touch.
+I'm Diar, a Senior Backend Engineer with a passion for Software Design and Architecture.
+It's great to have you here and I'm looking forward to getting in touch with you.
 
 - If you are an experienced developer then write me a "Hi" and I will write you back, maybe we can end up doing something cool together.
 - If you are just getting started into development world then I encourage you to say "Hi"
