@@ -1,10 +1,8 @@
 ---
 title: Introduction of the project and the plan (Part 1).
 summary: In this first article of this series of articles, we will be laying out the project idea and the plan what we are going to achieve.
-path: Creating api from scratch
-path_tag: how-to-api
-archive: true
 date: 05-02-2023
+draft: true
 tags:
   - learning
   - PHP
@@ -12,7 +10,23 @@ tags:
   - how-to-api
 ---
 
-# What will you learn?
+# Before we start
+
+This is a series of articles where you are going to see how to create an API which interacts with other API's,
+this is going to be production ready so you could use this application directly into your frontend or mobile app.
+
+# Project idea
+
+The project that I want to do in this series is a api software where I am going to explain using [C4 model](https://c4model.com/),
+before going into diagrams I want to give you some context of what I want to achieve.
+
+I want to have an API which analyses a list of articles where we are going to get them from [api.dev.to/articles](),
+and from these we are going to analyse and see what kind of keyword they contain also which tags.
+
+After gathering these data we want to create a list of most used keywords, this should be the main basic functionality.
+For this API we are going to use Github Oauth2 for authenticating.
+
+## System Context Diagram
 
 Before I tell you what are you going to learn, you need to know that this article will group together articles are part of the same project.
 In this case I am starting to write a boundle articles where we are going to create an API from scratch all the way to deployment.
