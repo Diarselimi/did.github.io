@@ -14,19 +14,21 @@ tags:
 
 # Before we start
 
-This is a series of articles where you are going to see how to create an API which interacts with other API's,
+This is a series of articles where you are going to learn how to create an API which interacts with other API's,
 this is going to be production ready so you could use this application directly into your frontend or mobile app.
+
+Things that you are going to learn are, Modeling, Design, Api documentation and CI/CD.
 
 # Project idea
 
-The project that I want to do in this series is a api software where I am going to explain using [C4 model](https://c4model.com/),
+The project that I want to do in this series is an API software where I am going to explain using [C4 model](https://c4model.com/),
 before going into diagrams I want to give you some context of what I want to achieve.
 
-I want to have an API which analyses a list of articles where we are going to get them from [api.dev.to/articles](),
-and from these we are going to analyse and see what kind of keyword they contain also which tags.
+I want to have an API which analyses a list of articles which we are going to get from [api.dev.to/articles](),
+and from these we are going to analyse and see which keywords are most used and what tags people assign them to.
 
 After gathering these data we want to create a list of most used keywords, this should be the main basic functionality.
-For this API we are going to use Github Oauth2 for authenticating.
+Also for Authenticating we are going to use Github Oauth2 as a provider.
 
 ## Level 1: System Context Diagram
 
@@ -43,8 +45,6 @@ In this diagram you will see how the user and our application will interact with
 In the following diagram you are going to see the PHP application, decomposed into components.
 ![Component Diagram](../../static/images/c4-level3-component-diagram.jpg)
 
-1. You will learn how to start a project in PHP and MYSQL.
-2. You will learn how to plan a project.
-3. You will learn how to create small tasks for your projects.
-4. You will learn how to deal with different kind of problems.
-5. You will learn how to deploy this project.
+# Required knowledge
+
+You need to already have experience with Mysql, PHP and OOP.
