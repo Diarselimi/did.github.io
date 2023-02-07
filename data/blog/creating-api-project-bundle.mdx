@@ -17,14 +17,14 @@ tags:
 This is a series of articles where you are going to learn how to create an API which interacts with other API's,
 this is going to be production ready so you could use this application directly into your frontend or mobile app.
 
-Things that you are going to learn are, Modeling, Design, Api documentation and CI/CD.
+After you finish this series of articles, you will be able to create your own API service where people could use it.
 
 # Project idea
 
 The project that I want to do in this series is an API software where I am going to explain using [C4 model](https://c4model.com/),
-before going into diagrams I want to give you some context of what I want to achieve.
+but before going into diagrams I want to give you some context of what we are going to create.
 
-I want to have an API which analyses a list of articles which we are going to get from [api.dev.to/articles](),
+I want to have an API which analyses a list of articles which we are going to get from [dev.to/api/articles](https://dev.to/api/articles),
 and from these we are going to analyse and see which keywords are most used and what tags people assign them to.
 
 After gathering these data we want to create a list of most used keywords, this should be the main basic functionality.
@@ -32,19 +32,28 @@ Also for Authenticating we are going to use Github Oauth2 as a provider.
 
 ## Level 1: System Context Diagram
 
-In the image below you will see how the user will interact with our API, and we will use Github to authenticate.
+In the diagram below you will see how the user will interact with our API, and we will use Github for authentication.
 ![System Context](../../static/images/c4-keyword-analyser-system-context.jpg)
+
+Keep in mind that the diagrams here represent the first version of the design, the diagram should evlolve or be updated if needed.
 
 ## Level 2: Container diagram
 
-In this diagram you will see how the user and our application will interact with different parts of the application.
+In the next diagram you will see how the user and our application will interact with different parts of the application.
 ![Container Diagram](../../static/images/c4-level2-keyword-analyser.jpg)
 
 ## Level 3: Component diagram
 
-In the following diagram you are going to see the PHP application, decomposed into components.
+In the next diagram you are going to see the PHP application, each component represented in the application.
 ![Component Diagram](../../static/images/c4-level3-component-diagram.jpg)
 
 # Required knowledge
 
-You need to already have experience with Mysql, PHP and OOP.
+You need to already have experience with Mysql, PHP and OOP programming.
+
+# Summary
+
+- This series of articles teaches how to create a production-ready API software that interacts with other API's.
+- The project involves creating an API that analyzes a list of articles from dev.to/api/articles to find the most used keywords and tags assigned to them. The API uses Github Oauth2 for authentication.
+- The design of the API is explained using C4 model with System Context, Container, and Component diagrams.
+- The required knowledge for this project includes experience with Mysql, PHP, and OOP programming.
