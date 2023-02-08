@@ -107,7 +107,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                   <SocialIcon
                     size="4"
                     href={shareOnFacebookUrl(slug)}
-                    kind={'linkedin'}
+                    kind={'facebook'}
                     rel="nofollow"
                   />
                 </div>
