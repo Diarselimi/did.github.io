@@ -24,14 +24,14 @@ const SocialIcon = ({ kind, href, size = 8 }) => {
 
   return (
     <a
-      className="mb-1 mr-1 inline-flex items-center rounded-full border-2 border-gray-600 p-3 transition duration-200 hover:border-gray-700 hover:bg-gray-900  hover:text-white"
+      className="mb-1 mr-1 inline-flex items-center rounded-full border-2 border-gray-600 p-3 transition duration-200 hover:border-gray-700 hover:bg-gray-900 hover:text-white"
       target="_blank"
       rel="noopener noreferrer"
       href={href}
     >
       <span className="sr-only">{kind}</span>
       <SocialSvg
-        className={`fill-current text-gray-900 hover:text-gray-900 dark:text-white dark:hover:text-white h-${size} w-${size}`}
+        className={`fill-current text-gray-900 hover:text-white dark:text-white dark:hover:text-white h-${size} w-${size}`}
       />
     </a>
   )
