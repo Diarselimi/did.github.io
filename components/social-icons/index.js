@@ -8,12 +8,12 @@ import Twitter from './twitter.svg'
 // Icons taken from: https://simpleicons.org/
 
 const components = {
-    mail: Mail,
-    github: Github,
-    facebook: Facebook,
-    youtube: Youtube,
-    linkedin: Linkedin,
-    twitter: Twitter,
+  mail: Mail,
+  github: Github,
+  facebook: Facebook,
+  youtube: Youtube,
+  linkedin: Linkedin,
+  twitter: Twitter,
 }
 
 const SocialIcon = ({ kind, href, size = 8 }) => {
@@ -29,7 +29,7 @@ const SocialIcon = ({ kind, href, size = 8 }) => {
       rel="noopener noreferrer"
       href={href}
     >
-        {SocialSvg}
+      {SocialSvg}
     </a>
   )
 }
