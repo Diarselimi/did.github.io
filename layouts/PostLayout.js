@@ -17,6 +17,10 @@ const shareOnLinkedinUrl = (slug) =>
   `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
     `${siteMetadata.siteUrl}/blog/${slug}`
   )}`
+const shareOnFacebookUrl = (slug) =>
+  `https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+    `${siteMetadata.siteUrl}/blog/${slug}`
+  )}`
 
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
@@ -95,6 +99,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 <div className="flex space-x-3 pt-6">
                   <SocialIcon href={discussUrl(slug)} kind={'twitter'} rel="nofollow" />
                   <SocialIcon href={shareOnLinkedinUrl(slug)} kind={'linkedin'} rel="nofollow" />
+                  <SocialIcon href={shareOnFacebookUrl(slug)} kind={'linkedin'} rel="nofollow" />
                 </div>
               </div>
             </div>
