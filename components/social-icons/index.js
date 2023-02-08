@@ -24,7 +24,7 @@ const SocialIcon = ({ kind, href, size = 8 }) => {
 
   return (
     <a
-      className="mb-1 mr-1 tex-center inline-flex items-center overflow-hidden rounded-full border-2 border-gray-600 transition duration-200 hover:border-gray-700 hover:bg-gray-900 hover:text-white"
+      className={`mb-1 mr-1 tex-center inline-flex items-center overflow-hidden rounded-full border-2 border-gray-600 transition duration-200 hover:border-gray-700 hover:bg-gray-900 hover:text-white h-${size} w-${size}`}
       target="_blank"
       rel="noopener noreferrer"
       href={href}
