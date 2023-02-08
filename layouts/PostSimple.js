@@ -4,11 +4,19 @@ import SectionContainer from '@/components/SectionContainer'
 import { BlogSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import formatDate from '@/lib/utils/formatDate'
-import Comments from '@/components/comments'
+import SocialIcon from '@/components/social-icons'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
-  const { date, title } = frontMatter
+  const { date, title, slug } = frontMatter
+  const discussUrl = (slug) =>
+    `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+      `${siteMetadata.siteUrl}/blog/${slug}`
+    )}`
+  const shareOnLinkedinUrl = (slug) =>
+    `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+      `${siteMetadata.siteUrl}/blog/${slug}`
+    )}`
 
   return (
     <SectionContainer>
@@ -65,6 +73,15 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           </div>
         </div>
       </article>
+      <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
+        <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
+        <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
+          <div className="flex space-x-3 pt-6">
+            <SocialIcon href={discussUrl(slug)} kind={'twitter'} rel="nofollow" />
+            <SocialIcon href={shareOnLinkedinUrl(slug)} kind={'linkedin'} rel="nofollow" />
+          </div>
+        </div>
+      </div>
     </SectionContainer>
   )
 }
