@@ -1,7 +1,7 @@
 ---
-title: Introduction of the project and the plan (Part 1).
-summary: In this first article of this series of articles, we will be laying out the project idea and the plan what we are going to achieve.
-date: 05-02-2023
+title: Preparing the machine and setting up the project (Part 2).
+summary:
+date: 08-02-2023
 tags:
   - learning
   - PHP
@@ -11,51 +11,28 @@ tags:
 
 <TOCInline toc={props.toc} />
 
-# Before we start
+# What do you need
 
-This is a series of articles where you are going to learn how to create an API which interacts with other API's,
-this is going to be production ready so you could use this application directly into your frontend or mobile app.
+Before we start coding you need to have docker installed in your machine, and Git for pushing your code.
 
-After you finish this series of articles, you will be able to create your own API service where people could use it.
+- To install docker you [should download it from their page](https://www.docker.com/products/docker-desktop/).
+- To install git you can download from [this link](https://git-scm.com/downloads).
 
-# Project idea
+After you are done installing docker you should be able to run in your terminal
 
-The project that I want to do in this series is an API software where I am going to explain using [C4 model](https://c4model.com/),
-but before going into diagrams I want to give you some context of what we are going to create.
+```terminal
+git -v
+```
 
-I want to have an API which analyses a list of articles which we are going to get from [dev.to/api/articles](https://dev.to/api/articles),
-and from these we are going to analyse and see which keywords are most used and what tags people assign them to.
+and docker-compose
 
-After gathering these data we want to create a list of most used keywords, this should be the main basic functionality.
-Also for Authenticating we are going to use Github Oauth2 as a provider.
+```terminal
+docker-compose version
+```
 
-## Level 1: System Context Diagram
+That's all, next step is to go to this [template repository](https://github.com/didslm/nginx-php-skeleton) and use it for our project
+to create a new project called `keyword-analyser`.
 
-In the diagram below you will see how the user will interact with our API, and we will use Github for authentication.
-![System Context](../../static/images/c4-keyword-analyser-system-context.jpg)
+# Choosing a framework
 
-Keep in mind that the diagrams here represent the first version of the design, the diagram should evlolve or be updated if needed.
-
-## Level 2: Container diagram
-
-In the next diagram you will see how the user and our application will interact with different parts of the application.
-![Container Diagram](../../static/images/c4-level2-keyword-analyser.jpg)
-
-## Level 3: Component diagram
-
-In the next diagram you are going to see the PHP application, each component represented in the application.
-![Component Diagram](../../static/images/c4-level3-component-diagram.jpg)
-
-This is the last diagram in this article, but keep in mind that C4 has 4 levels,
-but that will come in the next articles since each component has to be represented in a diagram.
-
-# Required knowledge
-
-You need to already have experience with Mysql, PHP and OOP programming.
-
-# Summary
-
-- This series of articles teaches how to create a production-ready API software that interacts with other API's.
-- The project involves creating an API that analyzes a list of articles from dev.to/api/articles to find the most used keywords and tags assigned to them. The API uses Github Oauth2 for authentication.
-- The design of the API is explained using C4 model with System Context, Container, and Component diagrams.
-- The required knowledge for this project includes experience with Mysql, PHP, and OOP programming.
+I am going to choose symfony for our project here, since it has some things for us ready.
