@@ -10,19 +10,19 @@ tags:
 
 <TOCInline toc={props.toc} />
 
-# What do you need
+# Before we start
 
-Before we start coding you need to have docker installed in your machine, and Git for pushing your code.
+Before we start coding you need to have docker installed in your machine, Git for pushing your code and Composer.
 
 - To install docker you [should download it from their page](https://www.docker.com/products/docker-desktop/).
 - To install git you can download from [this link](https://git-scm.com/downloads).
+- To install Composer you can [download it here](https://getcomposer.org/download/).
 
 After you are done installing docker you should be able to run in your terminal
 
 ```terminal
 git -v
 ```
-
 and docker-compose
 
 ```terminal
@@ -34,4 +34,36 @@ to create a new project called `keyword-analyser`.
 
 # Choosing a framework
 
-I am going to choose symfony for our project here, since it has some things for us ready.
+I am going to choose symfony for our project here, I will use the API skeleton using composer.
+```terminal
+composer create-project symfony/skeleton:"6.2.*" app
+cd app && composer install phpunit/phpunit @dev
+```
+
+# Pushing your code
+
+Now since we have the project ready for our repository, using git we are going to push the code to our private repository.
+Assuming you already cloned the skeleton repository into your machine, the following is to do your first commit.
+
+Let's execute
+```terminal
+git status #to see which files are added
+git add .
+git commit -m "Symfony initialization commit"
+```
+
+We can have a file with the following content to tell git which directories and files to ignore
+```txt:.gitignore
+vendor
+.DS_Store
+```
+
+
+# See the result
+After installing the composer symfony skeleton, you can spin up the instance by running `make up`,
+and you can access the endpoints on [localhost:8000](http://localhost:8000/).
+
+
+# Next step
+Now that you are all set up,
+let's get our project going by adding some endpoints to it, but before adding endpoints we need to take a look at our c4 model.
