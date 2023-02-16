@@ -76,6 +76,38 @@ and you can access the endpoint on [localhost:8000/v1/ping](http://localhost:800
 
 Here you can [see the result I pushed into Github](https://github.com/didslm/keyword-analyser).
 
-# Next step
-Now that you are all set up,
-let's get our project going by adding some endpoints to it, but before adding endpoints we need to take a look at our c4 model.
+# Adding Tests
+Next step we are going to add a Unit test checking if we are getting the correct response from this Controller.
+
+First we need to install phpunit
+```output
+composer require --dev symfony/test-pack
+```
+
+Then we are going to add a test unit
+```php:PingControllerTest.php
+<?php
+
+namespace App\Tests\Application;
+
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+
+
+class PingControllerTest extends WebTestCase
+{
+    public function testShouldSucceed()
+    {
+        $client = static::createClient();
+
+        // Request a specific page
+        $client->request('GET', '/v1/ping');
+
+        $response = $client->getResponse()->getContent();
+
+        // Validate a successful response and some content
+        $this->assertResponseIsSuccessful();
+        $this->assertEquals(['ping' => true], json_decode($response, true));
+
+    }
+}
+```
