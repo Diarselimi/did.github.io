@@ -12,32 +12,16 @@ tags:
 
 # Before we start
 
-Before we start coding you need to have docker installed in your machine, Git for pushing your code and Composer.
+I am going to create a repository called `keyword-analyser`, based on the template I published before.
 
-- To install docker you [should download it from their page](https://www.docker.com/products/docker-desktop/).
-- To install git you can download from [this link](https://git-scm.com/downloads).
-- To install Composer you can [download it here](https://getcomposer.org/download/).
-
-After you are done installing docker you should be able to run in your terminal
-
-```terminal
-git -v
-```
-and docker-compose
-
-```terminal
-docker-compose version
-```
-
-That's all, next step is to go to this [template repository](https://github.com/didslm/nginx-php-skeleton) and use it for our project
-to create a new project called `keyword-analyser`.
+This is the [template repository](https://github.com/didslm/nginx-php-skeleton).
 
 # Choosing a framework
 
 I am going to choose symfony for our project here, I will use the API skeleton using composer.
 ```terminal
-composer create-project symfony/skeleton:"6.2.*" app
-cd app && composer install phpunit/phpunit @dev
+composer create-project symfony/skeleton:"6.2.*" app && \
+cp -r app/* . && rm -r app
 ```
 
 # Pushing your code
