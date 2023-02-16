@@ -76,15 +76,16 @@ and you can access the endpoint on [localhost:8000/v1/ping](http://localhost:800
 
 Here you can [see the result I pushed into Github](https://github.com/didslm/keyword-analyser).
 
-# Adding Tests
-Next step we are going to add a Unit test checking if we are getting the correct response from this Controller.
 
-First we need to install phpunit
+# Adding Tests
+Next step we are going to add a Functional test checking if we are getting the correct response from this Controller.
+
+First we need to install library for testing, in this case we need one that integrates easily with symfony.
 ```output
 composer require --dev symfony/test-pack
 ```
 
-Then we are going to add a test unit
+And the test class would look like this
 ```php:PingControllerTest.php
 <?php
 
