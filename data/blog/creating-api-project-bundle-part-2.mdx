@@ -31,21 +31,45 @@ Assuming you already cloned the skeleton repository into your machine, the follo
 
 Let's execute
 ```terminal
-git status #to see which files are added
 git add .
 git commit -m "Symfony initialization commit"
+git push
 ```
 
 We can have a file with the following content to tell git which directories and files to ignore
 ```txt:.gitignore
 vendor
 .DS_Store
+.idea
+var/cache
 ```
 
 
+# Adding a ping endpoint
+
+The following controller is located inside `src > Controller` directory.
+```php:PingController.php
+<?php
+
+namespace App\Controller;
+
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
+
+class PingController
+{
+    #[Route('/v1/ping')]
+    public function Ping(Request $request) : JsonResponse
+    {
+        return new JsonResponse(['ping' => true]);
+    }
+}
+```
+
 # See the result
-After installing the composer symfony skeleton, you can spin up the instance by running `make up`,
-and you can access the endpoints on [localhost:8000](http://localhost:8000/).
+You can spin up the instance by running `make up`,
+and you can access the endpoint on [localhost:8000/v1/ping](http://localhost:8000/v1/ping).
 
 
 # Next step
