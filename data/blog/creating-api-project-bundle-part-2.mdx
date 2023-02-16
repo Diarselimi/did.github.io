@@ -18,7 +18,7 @@ This is the [template repository](https://github.com/didslm/nginx-php-skeleton).
 
 # Choosing a framework
 
-I am going to choose symfony for our project here, I will use the API skeleton using composer.
+I am going to choose [Symfony](https://symfony.com/) for our project here, I will use the API skeleton using composer.
 ```terminal
 composer create-project symfony/skeleton:"6.2.*" app && \
 cp -r app/* . && rm -r app
@@ -68,9 +68,13 @@ class PingController
 ```
 
 # See the result
-You can spin up the instance by running `make up`,
+You can spin up the instance by running the following
+```output
+make up
+```
 and you can access the endpoint on [localhost:8000/v1/ping](http://localhost:8000/v1/ping).
 
+Here you can [see the result I pushed into Github](https://github.com/didslm/keyword-analyser).
 
 # Next step
 Now that you are all set up,
