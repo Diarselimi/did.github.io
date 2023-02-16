@@ -10,6 +10,7 @@ tags:
 
 <TOCInline toc={props.toc} />
 
+
 # Before we start
 
 I am going to create a repository called `keyword-analyser`, based on the template I published before.
@@ -23,6 +24,12 @@ I am going to choose [Symfony](https://symfony.com/) for our project here, I wil
 composer create-project symfony/skeleton:"6.2.*" app && \
 cp -r app/* . && rm -r app
 ```
+
+There are other frameworks that you can choose from like:
+- Laravel
+- Cake PHP
+- Yii
+
 
 # Pushing your code
 
@@ -112,3 +119,15 @@ class PingControllerTest extends WebTestCase
     }
 }
 ```
+
+# Summary
+
+In this article we learned how to start an application using a framework, host it in github and run our tests in github pipelines.
+
+Things that we learned.
+- How we can use the prepared template to containerise our PHP application using Docker.
+- How to create a new Symfony API endpoint.
+- How to push our project using GIT and Github for hosting our code.
+- How to add Application tests using one of the Symfony's library.
+
+If you liked this article, be kind share it also follow me on linkedin and twitter for new articles. ❤️
