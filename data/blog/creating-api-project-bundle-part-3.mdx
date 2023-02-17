@@ -1,0 +1,77 @@
+---
+title: Starting to implement the first API Endpoint (part 3).
+summary:
+date: 02-17-2023
+tags:
+  - learning
+  - PHP
+  - HOW-TO-API
+---
+
+# Before we start
+
+> Keep in mind this is a series of article, make sure you read the previous parts to have more context and better understanding.
+
+In this article we are going to start implementing endpoints,
+in particular you are going to learn how to add a new endpoint where we are going to call it
+`/v1/tags/{tag}/keywords`.
+
+I am going to name endpoints based on REST, so in our case `tags` is the main resource, then we provide specific `{tag}`
+to get some keywords recommended.
+
+# Implementation details
+
+This endpoint will be a `GET /v1/tags/{tag}/keywords`, where is going to return a json response like the following
+
+```json
+[{ "name": "keyword" }, { "name": "keyword1" }, { "name": "keyword2" }, { "name": "keyword3" }]
+```
+
+The response will return a list of most used keywords ordered by the most used ones.
+
+This particular endpoint will need a lot of functionality to have already in place,
+but we are going to have basic list of keywords saved in a file.
+
+> Later we are going to use MySQL while pulling data from external sources.
+
+# Adding the tests
+
+First thing, we go into our Application tests and add a new `KeywordRecommenderControllerTest`
+which will return a static list of keywords to us.
+
+This should be straight forward.
+
+# Implementation
+
+First we create a file with some text in it, in this case it's just a Lorem Ipsum
+
+```text:keywords.txt
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+```
+
+Next I am going to add the endpoint controller.
+
+```php:KeywordRecommenderController.php
+
+```
+
+Next I am going to add our Entity which is going to be of course `Keyword` and `Tag`,
+for us it is important that we relate the keywords to the tag,
+because at the end the tag is going to be provided when asking for keyword recommendations.
+
+```php:Keyword.php
+class Keyword {
+    private string $value;
+    private Keywords $keywords;
+
+    public function keywords(): Keywords
+    {
+        return $this->keywords;
+    }
+
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+}
+```
