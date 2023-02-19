@@ -1,5 +1,5 @@
 ---
-title: Preparing the machine and setting up the project (Part 2).
+title: Preparing the machine and setting up the project (part 2).
 summary:
 date: 02-14-2023
 tags:
@@ -10,12 +10,10 @@ tags:
 
 <TOCInline toc={props.toc} asDisclosure />
 
-
 # Before we start
 
-If you are not aware of [the first part](https://diar.dev/blog/creating-api-project-bundle) of this project, 
+If you are not aware of [the first part](https://diar.dev/blog/creating-api-project-bundle) of this project,
 please check that first so that what we are doing here makes sense.
-
 
 I am going to create a repository called `keyword-analyser`, based on the template I published before.
 
@@ -25,16 +23,17 @@ If you are not sure just checkout [this short video](https://youtu.be/dPNvOXmBdY
 # Choosing a framework
 
 I am going to choose [Symfony](https://symfony.com/) for our project here, I will use the API skeleton using composer.
+
 ```terminal
 composer create-project symfony/skeleton:"6.2.*" app && \
 cp -r app/* . && rm -r app
 ```
 
 There are other frameworks that you can choose from like:
+
 - Laravel
 - Cake PHP
 - Yii
-
 
 # Pushing your code
 
@@ -42,6 +41,7 @@ Now since we have the project ready for our repository, using git we are going t
 Assuming you already cloned the skeleton repository into your machine, the following is to do your first commit.
 
 Let's execute
+
 ```terminal
 git add .
 git commit -m "Symfony initialization commit"
@@ -49,6 +49,7 @@ git push
 ```
 
 We can have a file with the following content to tell git which directories and files to ignore
+
 ```txt:.gitignore
 vendor
 .DS_Store
@@ -56,10 +57,10 @@ vendor
 var/cache
 ```
 
-
 # Adding a ping endpoint
 
 The following controller is located inside `src > Controller` directory.
+
 ```php:PingController.php
 <?php
 
@@ -80,24 +81,29 @@ class PingController
 ```
 
 # See the result
+
 You can spin up the instance by running the following
+
 ```output
 make up
 ```
+
 and you can access the endpoint on [localhost:8000/v1/ping](http://localhost:8000/v1/ping).
 
 Here you can [see the result I pushed into Github](https://github.com/didslm/keyword-analyser).
 
-
 # Adding Tests
+
 Next step we are going to add a Functional test checking if we are getting the correct response from this Controller.
 
 First we need to install library for testing, in this case we need one that integrates easily with symfony.
+
 ```output
 composer require --dev symfony/test-pack
 ```
 
 And the test class would look like this
+
 ```php:PingControllerTest.php
 <?php
 
@@ -130,6 +136,7 @@ class PingControllerTest extends WebTestCase
 In this article we learned how to start an application using a framework, host it in github and run our tests in github pipelines.
 
 Things that we learned.
+
 - How we can use the prepared template to containerise our PHP application using Docker.
 - How to create a new Symfony API endpoint.
 - How to push our project using GIT and Github for hosting our code.
