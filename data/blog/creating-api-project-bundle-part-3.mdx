@@ -17,10 +17,18 @@ In this article we are going to start implementing endpoints,
 in particular you are going to learn how to add a new endpoint where we are going to call it
 `/v1/tags/{tag}/keywords`.
 
-I am going to name endpoints based on REST, so in our case `tags` is the main resource, then we provide specific `{tag}`
-to get some keywords recommended.
+You are going to see how we are going to decide on the structure of the application itself.
 
-# Implementation details
+# Application structure
+
+Before deciding on a structure, we need to ask some questions:
+
+1. Is this application response critical; do we need to return the response fast?
+2. Is this application going to process
+
+# Implementing the endpoint
+
+All the endpoints we are going to name are going to follow [REST]().
 
 This endpoint will be a `GET /v1/tags/{tag}/keywords`, where is going to return a json response like the following
 
@@ -77,12 +85,19 @@ class KeywordRecommenderControllerTest extends WebTestCase
 First we create a file with some text in it, in this case it's just a Lorem Ipsum
 
 ```text:keywords.txt
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+At vero eos et accusam et justo duo dolores et ea rebum.
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 ```
 
 Next I am going to add the endpoint controller.
 
 ```php:KeywordRecommenderController.php
+
 
 ```
 
@@ -90,12 +105,42 @@ Next I am going to add our Entity which is going to be of course `Keyword` and `
 for us it is important that we relate the keywords to the tag,
 because at the end the tag is going to be provided when asking for keyword recommendations.
 
-```php:Keyword.php
+```php
 class Keyword {
-    private string $value;
-    private Keywords $keywords;
 
-    public function keywords(): Keywords
+    public function __construct(private string $value){}
+
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+}
+
+class KeywordWithWeight {
+
+    public function __construct(private string $keyword, private float $weight){}
+
+    public function getKeyword(): Keyword
+    {
+        return $this->keyword;
+    }
+
+    public function getWeight(): float
+    {
+        return $this->weight;
+    }
+}
+
+class KeywordWeightCollection {
+    public function __construct(private array $keywords){}
+
+}
+
+class Tag {
+    private string $value;
+    private KeywordWeightCollection $keywordWeightCollection;
+
+    public function getKeywords(): Keywords
     {
         return $this->keywords;
     }
