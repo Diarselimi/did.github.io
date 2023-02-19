@@ -2,6 +2,7 @@
 title: Starting to implement the first API Endpoint (part 3).
 summary:
 date: 02-17-2023
+layout: PostSimple
 tags:
   - learning
   - PHP
@@ -39,7 +40,37 @@ but we are going to have basic list of keywords saved in a file.
 First thing, we go into our Application tests and add a new `KeywordRecommenderControllerTest`
 which will return a static list of keywords to us.
 
-This should be straight forward.
+This should be straight forward and would look something like the following 
+```php:KeywordRecommenderControllerTest.php
+
+namespace App\Tests\Application;
+
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+
+
+class KeywordRecommenderControllerTest extends WebTestCase
+{
+    public function testShouldReturnSuccessResponse(): void
+    {
+
+        $expectedResponse = [
+            ['keyword' => 'most']
+        ];
+
+        $client = static::createClient();
+
+        // Request a specific page
+        $client->request('GET', '/v1/tags/test/keywords');
+
+        $response = $client->getResponse()->getContent();
+
+        // Validate a successful response and some content
+        $this->assertResponseIsSuccessful();
+        $this->assertEquals($expectedResponse, json_decode($response, true));
+   
+    }
+}
+```
 
 # Implementation
 
