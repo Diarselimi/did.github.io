@@ -24,12 +24,8 @@ export default function Home({ posts }) {
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             Hello and welcome to my blog! I am thrilled to share my thoughts and experiences on the
-            exciting world of programming, testing, design, and architecture. Whether you're a
-            seasoned developer or just starting out, I believe you'll find something valuable here.
-            From the latest trends and techniques in software engineering to the challenges and
-            solutions in building scalable and maintainable systems, I aim to cover a wide range of
-            topics that matter to all of us in the tech industry. So sit back, grab a cup of coffee,
-            and join me on this journey of exploring the best practices in software development!
+            exciting world of programming, testing, design, and architecture. I aim to cover a wide
+            range of topics that matter to all of us in the tech industry.
           </p>
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
