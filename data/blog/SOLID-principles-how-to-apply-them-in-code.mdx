@@ -1,0 +1,145 @@
+---
+title: "S.O.L.I.D principles and how to apply them in code"
+date: 2021-11-17 08:15:20
+summary: Create a solid foundation in programming by learning SOLID principles.
+tags: 
+    - SOLID 
+    - OOP 
+    - principles
+---
+
+I asked a relative of mine why we should learn SOLID principles?
+Here's how he answers...
+> The difference between amateurs and professionals required by every company, including: Tesla, Google, Apple, SpaceX, etc. is found in the application of different principles.
+
+After reading this article and analyzing the examples in this article, you will understand the SOLID principles and be ready to apply them.
+
+Every company in Germany that you apply to as a software developer will ask you interview questions about the SOLID principles.
+
+SOLID principles in OO programming will help you a lot in your programming career.
+You'll have a stable foundation to move forward with, regardless of the product you're building.
+
+### Presentation of the problem
+Before we begin, I'll introduce the problem I'll be working on throughout the examples I take.
+
+### The problem
+Let's take an example of a client of yours who will ask you to develop an application. This application will digitize the orders in his restaurant _Villa Natyra_ that only makes pizzas and hamburgers.
+As good programmers that I am, we build the application, now he is using it and he is satisfied.
+
+Okay, now that I've built the product, let's talk about the principles.
+
+### First principle - One class, one responsibility
+> A class should only have one responsibility and one reason to change.
+
+An example where this principle is not respected
+
+```php
+Hamburger class
+{
+    private string $category;
+    private array $additions;
+    private string $meattype;
+ 
+    public function __constructor(string $itemtype, array $extras)
+    {
+        $this->category = $this->defineCategory($typeIMhisit);
+        $this->extensions = $extensions;
+        $this->meattype = $meattype;
+    }
+ 
+    private function defineCategory(string $typeIMishit): string
+    {
+        if (in_array($meattype, ['chicken_file', 'beef_meat'])) {
+            return 'carrier';
+        }
+ 
+        return 'oven';
+    }
+ 
+    public function calculateNumber(): double
+    {
+        double $amount = 0;
+        foreach($this->additions nor $additions) {
+            $amount += $addition->getPrice();
+        }
+ 
+        return $this->meattype + $amount;
+    }
+ 
+    public function saveInvoice(): void
+    {
+        //here the invoice is stored in the database
+    }
+}
+```
+
+If we have a class just for the hamburger, this class also accepts additions such as salad, tomatoes, etc.
+We also define the category within the class, store the data in the database and calculate the amount.
+Then this class will change whenever the storage mode in the database or the calculation mode or the category definition mode changes.
+
+```php
+interface Food {}
+ 
+class Hamburger implements Food
+{
+    private const CATEGORY = 'oven';
+    public array $additions;
+    public string $meattype;
+    public double $amount;
+ 
+    public function __constructor(string $itemtype, array $extras)
+    {
+        $this->category = $this->defineCategory($typeIMhisit);
+        $this->extensions = $extensions;
+        $this->meattype = $meattype;
+    }
+ 
+    public function getCategory(): string
+    {
+        return self::CATEGORY;
+    }
+}
+ 
+class Food Calculator
+{
+    public function __constructor(Food $food){}
+ 
+    public function getTotal(): double
+    {
+        return 0.0; //here the amount is calculated.
+    }
+}
+ 
+class StorageInvoices
+{
+    public function save(Invoice $invoice): void
+    {
+        $this->save($invoice);
+    }
+}
+ 
+class Invoice
+{
+    public function __constructor(Food $food, double $amount)
+}
+
+```
+And here, as you can see, we have divided the classes with different responsibilities, every time the price calculation changes, the ``Food Calculator'' class also changes.
+If we decide to change the way we store the data, then the ``Saving Invoices'' class changes.
+
+### Principle Two - Open to extension, closed to change.
+> A class should be closed for changes while open for extensions.
+
+Let's take the example of the class that calculates the ``Food Calculator'' and see how it will change if a new request comes to us, for example "Yes, I need the final price to be 20% cheaper for students"
+
+Now, as programmers without knowledge of this "Closed for changes" principle, we will make a change as follows
+
+```php
+interface Food {}
+ 
+class Food Calculator
+{
+    public function getAmount(Food $food): double
+    {
+        $amount = $food->getMeatType()->getAmount();
+        foreach($food->getAdditions() as $additions) {

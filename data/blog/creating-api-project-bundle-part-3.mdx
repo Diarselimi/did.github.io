@@ -1,0 +1,184 @@
+---
+title: Starting to implement the first API Endpoint (part 3).
+summary:
+date: 02-17-2023
+tags:
+  - REST
+  - PHP
+  - HOW-TO-API
+---
+
+# Before we start
+
+> Keep in mind this is a series of article, make sure you read the previous parts to have more context and better understanding.
+
+Your are going to learn how to implement a endpoint Implementation.
+
+You are going to learn about a new application structure.
+
+# Application structure
+
+Before deciding on a structure, we need to ask some questions:
+
+1. Is this application response critical; do we need to return the response fast?
+2. Is this application going to process
+
+# Implementing the endpoint
+
+All the endpoints we are going to name are going to follow [REST API](https://restfulapi.net/) guidelines.
+
+This endpoint will be a `GET /v1/tags/{tag}/keywords`, where is going to return a json response like the following
+
+```json
+[{ "name": "keyword" }, { "name": "keyword1" }, { "name": "keyword2" }, { "name": "keyword3" }]
+```
+
+The response will return a list of most used keywords ordered by the most used ones.
+
+This particular endpoint will need a lot of functionality to have already in place,
+but we are going to have basic list of keywords saved in a file.
+
+> Later we are going to use MySQL while pulling data from external sources.
+
+# Adding the tests
+
+First thing, we go into our Application tests and add a new `KeywordRecommenderControllerTest`
+which will return a static list of keywords to us.
+
+This should be straight forward and would look something like the following
+
+```php:KeywordRecommenderControllerTest.php
+
+namespace App\Tests\Application;
+
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+
+
+class KeywordRecommenderControllerTest extends WebTestCase
+{
+    public function testShouldReturnSuccessResponse(): void
+    {
+
+        $expectedResponse = [
+            ['keyword' => 'most']
+        ];
+
+        $client = static::createClient();
+
+        // Request a specific page
+        $client->request('GET', '/v1/tags/test/keywords');
+
+        $response = $client->getResponse()->getContent();
+
+        // Validate a successful response and some content
+        $this->assertResponseIsSuccessful();
+        $this->assertEquals($expectedResponse, json_decode($response, true));
+
+    }
+}
+```
+
+# Implementation
+
+First we create a file with some text in it, in this case it's just a Lorem Ipsum
+
+```text:keywords.txt
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+At vero eos et accusam et justo duo dolores et ea rebum.
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+```
+
+Next I am going to add the endpoint controller.
+
+```php:KeywordRecommenderController.php
+
+
+```
+
+```php
+//create a class which identifies key words in a text
+class KeywordExtractor
+{
+    private array $keywords;
+
+    public function __construct(string $text)
+    {
+        $this->keywords = $this->extractKeywords($text);
+    }
+
+    public function getKeywords(): array
+    {
+        return $this->keywords;
+    }
+
+    private function extractKeywords(string $text): array
+    {
+        $keywords = [];
+        $words = explode(' ', $text);
+        foreach ($words as $word) {
+            if (isset($keywords[$word])) {
+                $keywords[$word]++;
+            } else {
+                $keywords[$word] = 1;
+            }
+        }
+        arsort($keywords);
+        return $keywords;
+    }
+}
+```
+
+Next I am going to add our Entity which is going to be of course `Keyword` and `Tag`,
+for us it is important that we relate the keywords to the tag,
+because at the end the tag is going to be provided when asking for keyword recommendations.
+
+```php
+class Keyword {
+
+    public function __construct(private string $value){}
+
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+}
+
+class KeywordWithWeight {
+
+    public function __construct(private string $keyword, private float $weight){}
+
+    public function getKeyword(): Keyword
+    {
+        return $this->keyword;
+    }
+
+    public function getWeight(): float
+    {
+        return $this->weight;
+    }
+}
+
+class KeywordWeightCollection {
+    public function __construct(private array $keywords){}
+
+}
+
+class Tag {
+    private string $value;
+    private KeywordWeightCollection $keywordWeightCollection;
+
+    public function getKeywords(): Keywords
+    {
+        return $this->keywords;
+    }
+
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+}
+```

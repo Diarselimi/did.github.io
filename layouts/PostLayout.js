@@ -17,11 +17,15 @@ const shareOnLinkedinUrl = (slug) =>
   `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
     `${siteMetadata.siteUrl}/blog/${slug}`
   )}`
+const shareOnFacebookUrl = (slug) =>
+  `https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+    `${siteMetadata.siteUrl}/blog/${slug}`
+  )}`
 
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
-  const { slug, fileName, date, title, images, tags } = frontMatter
+  const { slug, fileName, date, title, images, tags, path, path_tag } = frontMatter
 
   return (
     <SectionContainer>
@@ -31,7 +35,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
         {...frontMatter}
       />
       <ScrollTopAndComment />
-      <article>
+      <article className="backdrop-blur-md">
         <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
           <header className="pt-6 xl:pb-6">
             <div className="space-y-1 text-center">
@@ -95,6 +99,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                 <div className="flex space-x-3 pt-6">
                   <SocialIcon href={discussUrl(slug)} kind={'twitter'} rel="nofollow" />
                   <SocialIcon href={shareOnLinkedinUrl(slug)} kind={'linkedin'} rel="nofollow" />
+                  <SocialIcon href={shareOnFacebookUrl(slug)} kind={'facebook'} rel="nofollow" />
                 </div>
               </div>
             </div>
@@ -106,9 +111,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
                       Tags
                     </h2>
                     <div className="flex flex-wrap">
-                      {tags.map((tag) => (
-                        <Tag key={tag} text={tag} />
-                      ))}
+                      {tags.map((tag) => tag !== path_tag && <Tag key={tag} text={tag} />)}
                     </div>
                   </div>
                 )}

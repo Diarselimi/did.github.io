@@ -5,7 +5,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 
-const MAX_DISPLAY = 10
+const MAX_DISPLAY = 7
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
@@ -24,18 +24,14 @@ export default function Home({ posts }) {
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             Hello and welcome to my blog! I am thrilled to share my thoughts and experiences on the
-            exciting world of programming, testing, design, and architecture. Whether you're a
-            seasoned developer or just starting out, I believe you'll find something valuable here.
-            From the latest trends and techniques in software engineering to the challenges and
-            solutions in building scalable and maintainable systems, I aim to cover a wide range of
-            topics that matter to all of us in the tech industry. So sit back, grab a cup of coffee,
-            and join me on this journey of exploring the best practices in software development!
+            exciting world of programming, testing, design, and architecture. I aim to cover a wide
+            range of topics that matter to all of us in the tech industry.
           </p>
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-            const { slug, date, title, summary, tags } = frontMatter
+            const { slug, date, title, summary, tags, path, path_tag } = frontMatter
             return (
               <li key={slug} className="py-12">
                 <article>
@@ -44,6 +40,18 @@ export default function Home({ posts }) {
                       <dt className="sr-only">Published on</dt>
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                         <time dateTime={date}>{formatDate(date)}</time>
+                      </dd>
+                      <dd>
+                        <div className="flex flex-wrap">
+                          {path && (
+                            <Link
+                              href={`/tags/${path_tag}`}
+                              className="border-1 rounded border-primary-200 bg-primary-500 p-1 text-xs text-white"
+                            >
+                              Path: {path}
+                            </Link>
+                          )}
+                        </div>
                       </dd>
                     </dl>
                     <div className="space-y-5 xl:col-span-3">
@@ -58,9 +66,7 @@ export default function Home({ posts }) {
                             </Link>
                           </h2>
                           <div className="flex flex-wrap">
-                            {tags.map((tag) => (
-                              <Tag key={tag} text={tag} />
-                            ))}
+                            {tags.map((tag) => tag !== path_tag && <Tag key={tag} text={tag} />)}
                           </div>
                         </div>
                         <div className="prose max-w-none text-gray-500 dark:text-gray-400">
