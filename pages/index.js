@@ -17,15 +17,7 @@ export default function Home({ posts }) {
   return (
     <>
       <div className="mx-auto flex max-w-screen-lg flex-col py-12 px-4">
-        <div className="relative mb-8 h-20 w-20 rounded-full border-2 border-gray-200 shadow-md">
-          <Image
-            src=""
-            alt="Profile Picture"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-full"
-          />
-        </div>
+        <div className="relative mb-8 h-20 w-20 rounded-full border-2 border-gray-200 shadow-md"></div>
 
         <p className="mb-4 text-2xl font-bold">Backend Engineer, Hiker.</p>
         <p className="mb-8 text-lg">
