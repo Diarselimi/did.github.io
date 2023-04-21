@@ -41,46 +41,7 @@ export default function Home({ posts }) {
           <SocialIcon kind="youtube" href={siteMetadata.youtube} size="5" />
         </div>
       </div>
-      <div className="flex w-full justify-center">
-        <div className="grid w-full max-w-screen-lg grid-cols-4 gap-10">
-          <div className="relative h-80 w-full -rotate-3 transform rounded-lg border">
-            <Image
-              src={`../../static/images/did_hike.jpeg`}
-              alt="Image 1"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg"
-            />
-          </div>
-          <div className="relative h-80 w-full rotate-2 transform rounded-lg border">
-            <Image
-              src={`../../static/images/did_climbing.jpeg`}
-              alt="Image 2"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg"
-            />
-          </div>
-          <div className="relative h-80 w-full -rotate-3 transform rounded-lg border">
-            <Image
-              src={`../../static/images/did_work.jpeg`}
-              alt="Image 3"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg"
-            />
-          </div>
-          <div className="relative h-80 w-full rotate-3 transform rounded-lg border">
-            <Image
-              src={`../../static/images/did_camp.jpeg`}
-              alt="Image 4"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg"
-            />
-          </div>
-        </div>
-      </div>
+      <div className="flex w-full justify-center"></div>
 
       <div className="mx-auto max-w-screen-lg py-12 px-4">
         <div className="flex flex-col md:flex-row md:space-x-6">
