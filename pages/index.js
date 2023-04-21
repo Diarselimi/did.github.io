@@ -19,7 +19,7 @@ export default function Home({ posts }) {
       <div className="mx-auto flex max-w-screen-lg flex-col py-12 px-4">
         <div className="relative mb-8 h-20 w-20 rounded-full border-2 border-gray-200 shadow-md">
           <Image
-            src={`../../static/images/author.jpg`}
+            src=""
             alt="Profile Picture"
             layout="fill"
             objectFit="cover"
