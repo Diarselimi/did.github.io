@@ -27,10 +27,12 @@ export default function Home({ posts }) {
           />
         </div>
 
-        <p className="mb-4 text-2xl font-bold">Backend Engineer, Hiker, Climber.</p>
+        <p className="mb-4 text-2xl font-bold">Backend Engineer, Hiker.</p>
         <p className="mb-8 text-lg">
-          When I am not workin I am usually hiking or climbing. I am usually posting online about
-          programming career and technology that I work with, that includes.
+          My passion is doing sports in general, but mostly hiking. I am always looking to learn
+          something new, architecture and design that's why I created this blog so that I can post
+          about my programming career, technology that I work with and new things that I try and
+          learn throughout my career.
         </p>
         <div className="flex w-full space-x-3">
           <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size="5" />
@@ -107,28 +109,18 @@ export default function Home({ posts }) {
           </div>
           <div className="w-full md:w-1/3">
             <div className="rounded-lg border border-gray-300 p-6">
-              <h3 className="mb-4 text-2xl font-bold">Stay up to date</h3>
+              <h3 className="mb-4 text-2xl font-bold">Stay up to date 🎉</h3>
               <p className="mb-4 text-gray-700 dark:text-gray-100">
-                Get notified when I publish something new, and unsubscribe at any time.
+                I post all my articles on Linkedin, no newsletter just follow me there and say Hi.
               </p>
-              <form className="flex flex-col">
-                <label htmlFor="email" className="mb-2 font-medium text-gray-700">
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Enter your email"
-                  className="mb-4 rounded-lg border border-gray-300 py-2 px-4 focus:border-blue-300 focus:outline-none focus:ring"
-                />
-                <button
-                  type="submit"
-                  className="rounded-lg border border-purple-600 bg-purple-500 py-2 text-white hover:bg-purple-600"
-                >
-                  Join
-                </button>
-              </form>
+              <a
+                href="https://linkedin.com/in/diarselimi"
+                target="_blank"
+                className="w-full rounded-lg border border-purple-600 bg-purple-500 py-3 px-5 text-white hover:bg-purple-600"
+                rel="noreferrer"
+              >
+                Follow me.
+              </a>
             </div>
 
             <div className=" mt-7 rounded-lg border border-gray-300 p-6">
