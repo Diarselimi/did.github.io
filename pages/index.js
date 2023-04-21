@@ -81,15 +81,7 @@ export default function Home({ posts }) {
               <div className="flex flex-col md:flex-row md:space-x-6">
                 <div className="flex-grow">
                   <div className="mb-8 flex items-center">
-                    <div className="mr-2 h-4 w-4 rounded-full bg-gray-300">
-                      <Image
-                        alt="Nord VPN"
-                        src="https://res.cloudinary.com/nordsec/image/upload/q_auto,f_auto,c_scale,h_48/v1/nord-security-web/global/favicon.png"
-                        className="rounded-xl"
-                        width="20"
-                        height="20"
-                      />
-                    </div>
+                    <div className="mr-2 h-4 w-4 rounded-full bg-gray-300"></div>
                     <div className="mb-1">
                       <p className="text-lg font-bold">Nord VPN</p>
                       <p className="text-xs text-gray-500">Senior Backend Engineer</p>
@@ -100,15 +92,7 @@ export default function Home({ posts }) {
                   </div>
 
                   <div className="mb-8 flex items-center">
-                    <div className="mr-2 h-4 w-4 rounded-full bg-gray-300">
-                      <Image
-                        alt="Billie"
-                        src="https://www.billie.io/images/logo/billie_logo_small.svg"
-                        className="rounded-xl"
-                        width="20"
-                        height="20"
-                      />
-                    </div>
+                    <div className="mr-2 h-4 w-4 rounded-full bg-gray-300"></div>
                     <div className="mb-1">
                       <p className="text-lg font-bold">Billie</p>
                       <p className="text-xs text-gray-500">Senior Backend Engineer</p>
@@ -118,15 +102,7 @@ export default function Home({ posts }) {
                     </p>
                   </div>
                   <div className="mb-8 flex items-center">
-                    <div className="mr-2 h-4 w-4 rounded-full bg-gray-300">
-                      <Image
-                        alt="Elba Tech"
-                        src="http://www.elba-tech.com/wp-content/uploads/2021/02/Elba-Technologies-Header-Dark-Logo-2021.png"
-                        className="rounded-xl"
-                        width="20"
-                        height="20"
-                      />
-                    </div>
+                    <div className="mr-2 h-4 w-4 rounded-full bg-gray-300"></div>
                     <div className="mb-1">
                       <p className="text-lg font-bold">Elba Tech</p>
                       <p className="text-xs text-gray-500">RPA Automation engineer</p>
@@ -136,15 +112,7 @@ export default function Home({ posts }) {
                     </p>
                   </div>
                   <div className="mb-8 flex items-center">
-                    <div className="mr-2 h-4 w-4 rounded-full bg-gray-300">
-                      <Image
-                        src="https://www.jaywalker-digital.ch/wp-content/themes/jd/images/logo-jaywalker-digital-single-darkblue.svg"
-                        className="rounded-xl rounded-full"
-                        alt="Jaywalker Digital"
-                        width="20"
-                        height="20"
-                      />
-                    </div>
+                    <div className="mr-2 h-4 w-4 rounded-full bg-gray-300"></div>
                     <div className="mb-1">
                       <p className="text-lg font-bold">Jaywalker Digital</p>
                       <p className="text-xs text-gray-500">Backend Engineer</p>
