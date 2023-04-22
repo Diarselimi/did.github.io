@@ -68,63 +68,6 @@ export default function Home({ posts }) {
                 Follow me.
               </a>
             </div>
-
-            <div className=" mt-7 rounded-lg border border-gray-300 p-6">
-              <h3 className="mb-4 text-2xl font-bold">Work</h3>
-              <div className="flex flex-col md:flex-row md:space-x-6">
-                <div className="flex-grow">
-                  <div className="mb-8 flex items-center">
-                    <div className="mr-2 h-4 w-4 rounded-full bg-gray-300"></div>
-                    <div className="mb-1">
-                      <p className="text-lg font-bold">Nord VPN</p>
-                      <p className="text-xs text-gray-500">Senior Backend Engineer</p>
-                    </div>
-                    <p className="ml-auto rounded-full border border-gray-300 bg-gray-200 px-2 py-1 text-sm text-xs text-gray-500">
-                      From 2022
-                    </p>
-                  </div>
-
-                  <div className="mb-8 flex items-center">
-                    <div className="mr-2 h-4 w-4 rounded-full bg-gray-300"></div>
-                    <div className="mb-1">
-                      <p className="text-lg font-bold">Billie</p>
-                      <p className="text-xs text-gray-500">Senior Backend Engineer</p>
-                    </div>
-                    <p className="ml-auto rounded-full border border-gray-300 bg-gray-200 px-2 py-1 text-sm text-xs text-gray-500">
-                      2019 — 2022
-                    </p>
-                  </div>
-                  <div className="mb-8 flex items-center">
-                    <div className="mr-2 h-4 w-4 rounded-full bg-gray-300"></div>
-                    <div className="mb-1">
-                      <p className="text-lg font-bold">Elba Tech</p>
-                      <p className="text-xs text-gray-500">RPA Automation engineer</p>
-                    </div>
-                    <p className="ml-auto rounded-full border border-gray-300 bg-gray-200 px-2 py-1 text-sm text-xs text-gray-500">
-                      2018 — 2019
-                    </p>
-                  </div>
-                  <div className="mb-8 flex items-center">
-                    <div className="mr-2 h-4 w-4 rounded-full bg-gray-300"></div>
-                    <div className="mb-1">
-                      <p className="text-lg font-bold">Jaywalker Digital</p>
-                      <p className="text-xs text-gray-500">Backend Engineer</p>
-                    </div>
-                    <p className="ml-auto rounded-full border border-gray-300 bg-gray-200 px-2 py-1 text-sm text-xs text-gray-500">
-                      2015 — 2018
-                    </p>
-                  </div>
-                  <div className="mb-8 flex items-center">
-                    <a
-                      href="#"
-                      className="w-full rounded-lg border border-gray-300 bg-gray-200 py-2 text-center text-gray-900 hover:bg-gray-300"
-                    >
-                      See CV
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
