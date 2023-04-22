@@ -8,69 +8,9 @@ const MAX_DISPLAY = 3
 export default function Home({ posts }) {
   return (
     <>
-      <div className="mx-auto flex max-w-screen-lg flex-col px-4 py-12">
-        <div className="relative mb-8 h-20 w-20 rounded-full border-2 border-gray-200 shadow-md"></div>
-
-        <p className="mb-4 text-2xl font-bold">Backend Engineer, Hiker.</p>
-        <p className="mb-8 text-lg">
-          My passion is doing sports in general, but mostly hiking. I am always looking to learn
-          something new, <Hashtag value={'architecture'} /> and <Hashtag value={'design'} /> that's
-          why I created this blog so that I can post about my programming career, technology that I
-          work with and new things that I try and learn throughout my career.
-        </p>
-        <div className="flex w-full space-x-3">
-          <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size="5" />
-          <SocialIcon kind="twitter" href={siteMetadata.twitter} size="5" />
-          <SocialIcon kind="github" href={siteMetadata.github} size="5" />
-          <SocialIcon kind="youtube" href={siteMetadata.youtube} size="5" />
-        </div>
-      </div>
-      <div className="flex w-full justify-center"></div>
-
-      <div className="mx-auto max-w-screen-lg px-4 py-12">
-        <div className="flex flex-col md:flex-row md:space-x-6">
-          <div className="w-full md:w-2/3">
-            <div className="space-y-6">
-              {[].map((frontMatter) => {
-                const { slug, date, title, summary, tags } = frontMatter
-                return (
-                  <a
-                    key={slug}
-                    className="font-size-1 group block rounded-xl p-4 transition-colors hover:bg-gray-100 dark:hover:bg-gray-700"
-                    href={`/blog/${slug}`}
-                  >
-                    <p className="mb-3 mt-3 border-l-2 border-gray-200 p-0 pl-5 text-sm text-gray-500">
-                      <time dateTime={date}>{formatDate(date)}</time>
-                    </p>
-                    <h3 className="mb-2 text-xl font-bold">{title}</h3>
-                    <p className="text-gray-600 dark:text-gray-500">{summary}</p>
-                    <p className="mt-2 font-bold text-purple-500 transition group-hover:text-purple-600">
-                      Read more →
-                    </p>
-                  </a>
-                )
-              })}
-            </div>
-          </div>
-          <div className="w-full md:w-1/3">
-            <div className="rounded-lg border border-gray-300 p-6">
-              <h3 className="mb-4 text-2xl font-bold">Stay up to date 🎉</h3>
-              <p className="mb-4 text-gray-700 dark:text-gray-100">
-                I post all my articles on Linkedin, no newsletter just connect with me there and say
-                Hi.
-              </p>
-              <a
-                href="https://linkedin.com/in/diarselimi"
-                target="_blank"
-                className="w-full rounded-lg border border-purple-600 bg-purple-500 px-5 py-3 text-white hover:bg-purple-600"
-                rel="noreferrer"
-              >
-                Follow me.
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <h1 className="mb-8 text-6xl font-bold tracking-tight text-black dark:text-white">
+        {siteMetadata.title}
+      </h1>
     </>
   )
 }
