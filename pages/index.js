@@ -16,7 +16,7 @@ export async function getStaticProps() {
 export default function Home({ posts }) {
   return (
     <>
-      <div className="mx-auto flex max-w-screen-lg flex-col py-12 px-4">
+      <div className="mx-auto flex max-w-screen-lg flex-col px-4 py-12">
         <div className="relative mb-8 h-20 w-20 rounded-full border-2 border-gray-200 shadow-md"></div>
 
         <p className="mb-4 text-2xl font-bold">Backend Engineer, Hiker.</p>
@@ -35,7 +35,7 @@ export default function Home({ posts }) {
       </div>
       <div className="flex w-full justify-center"></div>
 
-      <div className="mx-auto max-w-screen-lg py-12 px-4">
+      <div className="mx-auto max-w-screen-lg px-4 py-12">
         <div className="flex flex-col md:flex-row md:space-x-6">
           <div className="w-full md:w-2/3">
             <div className="space-y-6">
@@ -47,7 +47,7 @@ export default function Home({ posts }) {
                     className="font-size-1 group block rounded-xl p-4 transition-colors hover:bg-gray-100 dark:hover:bg-gray-700"
                     href={`/blog/${slug}`}
                   >
-                    <p className="mt-3 mb-3 border-l-2 border-gray-200 p-0 pl-5 text-sm text-gray-500">
+                    <p className="mb-3 mt-3 border-l-2 border-gray-200 p-0 pl-5 text-sm text-gray-500">
                       <time dateTime={date}>{formatDate(date)}</time>
                     </p>
                     <h3 className="mb-2 text-xl font-bold">{title}</h3>
@@ -70,7 +70,7 @@ export default function Home({ posts }) {
               <a
                 href="https://linkedin.com/in/diarselimi"
                 target="_blank"
-                className="w-full rounded-lg border border-purple-600 bg-purple-500 py-3 px-5 text-white hover:bg-purple-600"
+                className="w-full rounded-lg border border-purple-600 bg-purple-500 px-5 py-3 text-white hover:bg-purple-600"
                 rel="noreferrer"
               >
                 Follow me.
