@@ -7,12 +7,6 @@ import siteMetadata from '@/data/siteMetadata'
 
 const MAX_DISPLAY = 3
 
-export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('blog')
-
-  return { props: { posts } }
-}
-
 export default function Home({ posts }) {
   return (
     <>
@@ -39,7 +33,7 @@ export default function Home({ posts }) {
         <div className="flex flex-col md:flex-row md:space-x-6">
           <div className="w-full md:w-2/3">
             <div className="space-y-6">
-              {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
+              {[].slice(0, MAX_DISPLAY).map((frontMatter) => {
                 const { slug, date, title, summary, tags } = frontMatter
                 return (
                   <a
