@@ -22,9 +22,9 @@ export default function Home({ posts }) {
         <p className="mb-4 text-2xl font-bold">Backend Engineer, Hiker.</p>
         <p className="mb-8 text-lg">
           My passion is doing sports in general, but mostly hiking. I am always looking to learn
-          something new, architecture and design that's why I created this blog so that I can post
-          about my programming career, technology that I work with and new things that I try and
-          learn throughout my career.
+          something new, <Hashtag value={'architecture'} /> and <Hashtag value={'design'} /> that's
+          why I created this blog so that I can post about my programming career, technology that I
+          work with and new things that I try and learn throughout my career.
         </p>
         <div className="flex w-full space-x-3">
           <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size="5" />
@@ -64,7 +64,8 @@ export default function Home({ posts }) {
             <div className="rounded-lg border border-gray-300 p-6">
               <h3 className="mb-4 text-2xl font-bold">Stay up to date 🎉</h3>
               <p className="mb-4 text-gray-700 dark:text-gray-100">
-                I post all my articles on Linkedin, no newsletter just follow me there and say Hi.
+                I post all my articles on Linkedin, no newsletter just connect with me there and say
+                Hi.
               </p>
               <a
                 href="https://linkedin.com/in/diarselimi"
