@@ -90,7 +90,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </dd>
             </dl>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pb-8 pt-10 dark:prose-dark">{children}</div>
+              <div className="prose dark:prose-dark max-w-none pb-8 pt-10">{children}</div>
               <div className="pb-6 pt-6 text-sm text-gray-700 dark:text-gray-300">
                 <div className="flex space-x-3 pt-6">
                   <SocialIcon href={discussUrl(slug)} kind={'twitter'} rel="nofollow" />
